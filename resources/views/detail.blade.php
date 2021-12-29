@@ -21,90 +21,22 @@
         </style>
     </head>
     <body class="antialiased">
-        <form method="get" action="{{route('search')}}" role="search">
-            <div class="">
-                {{-- @csrf --}}
-                <input class="form-control" type="text" name="q" value="{{isset($q) && !empty($q) ? $q : ''   }}" placeholder="Search..">
-                {{-- <input type="hidden" value="{{$token}}" name="token" /> --}}
-                <button type="submit">Search</button>
-              </div>
-        </form>
+        
         @if(isset($data))
-            @if(count($data['albums']['items']) > 0)
+            @if(count($data) > 0)
             <div>
-                <h2>Album</h2>
+                <h2>Detail</h2>
                 <table width="100%">
                     <thead>
+                        @foreach ($data as $key => $item)
                         <tr>
-                            <th>Image</th>
-                            <th class="text-center">Title</th>   
-                            <th>Action</th> 
+                            <th>{{ucwords(implode(' ', explode('_',$key)))}}</th>
+                            <td class="text-center">{{!is_array($item) ? $item : ''}}</td>   
                         </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($data['albums']['items'] as $value)
-                            {{-- @dd($value); --}}
-                        <tr>
-                            <td class="text-center"><img src="{{isset($value['images'][0]) ? $value['images'][0]['url'] : ''}}" width="100" /></td>
-                            <td class="text-center">{{$value['name']}}</td>
-                            <td class="text-center"><a href="{{route('detail',['d' => base64_encode($value['href'])])}}">Detail</a></td>
-                        </tr>    
                         @endforeach
-                    </tbody>
-                </table>
-            </div>
-            @endif
-            @if(count($data['tracks']['items']) > 0)
-            {{-- @dd($data['tracks']['items']) --}}
-            <div>
-                <h2>Tracks</h2>
-                <table width="100%">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Track</th>
-                            <th class="text-center">Title</th>  
-                            <th class="text-center">Action</th>   
-                        </tr>
+                       
                     </thead>
-                    <tbody>
-                        @foreach ($data['tracks']['items'] as $value)
-                            {{-- @dd($value); --}}
-                        <tr>
-                            <td class="text-center">
-                                <audio controls="" style="vertical-align: middle" src="{{$value['preview_url']}}" type="audio/mp3" controlslist="nodownload">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td class="text-center">{{$value['name']}}</td>
-                            <td class="text-center"><a href="{{route('detail',['d' => base64_encode($value['href'])])}}">Detail</a></td>
-                        </tr>    
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-            @endif
-            @if(count($data['artists']['items']) > 0)
             
-            <div>
-                <h2>Artists</h2>
-                <table width="100%">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Image</th>
-                            <th class="text-center">Title</th>    
-                            <th class="text-center">Action</th> 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($data['artists']['items'] as $value)
-                            {{-- @dd($value); --}}
-                        <tr>
-                            <td class="text-center"><img src="{{isset($value['images'][0]) ? $value['images'][0]['url'] : ''}}" width="100" /></td>
-                            <td class="text-center">{{$value['name']}}</td>
-                            <td class="text-center"><a href="{{route('detail',['d' => base64_encode($value['href'])])}}">Detail</a></td>
-                        </tr>    
-                        @endforeach
-                    </tbody>
                 </table>
             </div>
             @endif

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\SearchController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,5 +14,6 @@
 |
 */
 
-Route::get('/', "SearchController@index");
-Route::post('/search', "SearchController@search");
+Route::get('/', [SearchController::class, 'index']);
+Route::get('/search', [SearchController::class, 'search'])->name('search');
+Route::get('/detail/{d}', [SearchController::class, 'detail'])->name('detail');

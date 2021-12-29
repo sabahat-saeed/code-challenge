@@ -1,43 +1,79 @@
-# Laravel Code Challenge
+<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
-This code test involves the creation of a working project with the help of the Laravel framework.
-The task is split into three sub-categories and shouldn't take longer than 2-4 hours of your time.
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
 
-### Prerequisites
-This code challenge does not involve any use of database connections. Therefore, you can clone this repository and run it locally as long as you have php >= 7.1.3 installed on your machine. Alternatively, you can install a VM such as Homestead.
+## About Laravel
 
-1. Option (php cli)
-- On Debian/Ubuntu machines, you can simply install everyting needed via apt, given you have the correct apt repository configured:
-    - `sudo add-apt-repository -y ppa:ondrej/php`    
-    - `sudo apt install composer php7.3-common php7.3-cli php7.3-json php7.3-mbstring php7.3-xml php7.3-opcache php7.3-readline php7.3-pdo php7.3-ctype php7.3-bcmath`
-    - Open a terminal and clone this repository into any directory on your machine, then and run `composer install` and `php artisan serve --port=8888` to start the web server, reachable under `http://localhost:8888`
-2. Option (Homestead)
-- For this, you need to have a hypervisor installed on your machine, such as vmware, virtualbox, parallels or hyper-v. We recommend to install the free [Virtual Box](https://www.virtualbox.org/wiki/Downloads). If you choose to use a different hypervisor, please edit the Homestead.yaml file accordingly ("provider")
-- In order for the custom domain **homestead.test** to work, you need to add it to your hosts-file (usually under /etc/hosts): `192.168.99.99 homestead.test`. For a quick fix run `sudo sh -c 'echo "192.168.99.99 homestead.test" >> /etc/hosts'` in your terminal.
-- Now you clone this repository and simply run the command `vagrant up`, then `vagrant ssh -c "cd ~/code; composer install"` and your application will be available under the address http://homestead.test
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-### Restrictions and Requirements
-1. Please do **NOT** use any JS/AJAX to solve this challenge but build it in PHP. 
-1. Please do **NOT** use any Spotify-Specific libraries but use an API-agnostic library such as [Guzzle](http://docs.guzzlephp.org/en/stable/) or [HTTPlug](http://docs.php-http.org/en/latest/httplug/tutorial.html)
-1. This challenge doesn't focus on the UI. Do not spend too much time on layout/css.
-1. You should focus on code quality and structure. If possible and timely reasonable, also add tests.
-1. Wherever possible and reasonable, try to follow the [SOLID principles](https://en.wikipedia.org/wiki/SOLID)
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-### The Challenge
-Implement the following functionality by using the official Spotify Developer's API. You can create an account [here](https://developer.spotify.com/dashboard/). Find out how to use their API in order to fulfill the implementation goals.
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-1. Allow your application to communicate with the Spotify API via server-to-server communication. Implement Authentication against their API and the retrieval of an access token that can be used for further requests. ([Reference](https://developer.spotify.com/documentation/general/guides/authorization-guide/#client-credentials-flow))
+## Learning Laravel
 
-1. When a user searches for any term in the search box (see `index.blade.php`), the result should be three separate lists: one list with matching artists, one with matching albums and one with tracks.
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-1. Each result in the lists should consist of an image and a title (name of artist, album or track respectively). Each result should be clickable and lead to another page which contains some more detailed information about the clicked item.
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
+## Laravel Sponsors
 
-### Hints
-We already created the two routes `/` and `/search` which point to the controller methods `index` and `search` which respectively return the views `index.blade.php` and `search.blade.php`.
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-This repository has been set up for you to start right away. In case you are not familiar with Laravel, here a few hints:
-- The routes can be found and configured in the file `routes/web.php`.
-- A first controller can be found here: `app/Http/Controllers/SearchController.php`.
-- The views can be found under `resources/views`.
-- Publicly accessible assets can be placed into the `public/` folder and its sub-directories.
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[British Software Development](https://www.britishsoftware.co)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- [UserInsights](https://userinsights.com)
+- [Fragrantica](https://www.fragrantica.com)
+- [SOFTonSOFA](https://softonsofa.com/)
+- [User10](https://user10.com)
+- [Soumettre.fr](https://soumettre.fr/)
+- [CodeBrisk](https://codebrisk.com)
+- [1Forge](https://1forge.com)
+- [TECPRESSO](https://tecpresso.co.jp/)
+- [Runtime Converter](http://runtimeconverter.com/)
+- [WebL'Agence](https://weblagence.com/)
+- [Invoice Ninja](https://www.invoiceninja.com)
+- [iMi digital](https://www.imi-digital.de/)
+- [Earthlink](https://www.earthlink.ro/)
+- [Steadfast Collective](https://steadfastcollective.com/)
+- [We Are The Robots Inc.](https://watr.mx/)
+- [Understand.io](https://www.understand.io/)
+- [Abdel Elrafa](https://abdelelrafa.com)
+- [Hyper Host](https://hyper.host)
+- [Appoly](https://www.appoly.co.uk)
+- [OP.GG](https://op.gg)
+- [云软科技](http://www.yunruan.ltd/)
+
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
