@@ -1,4 +1,4 @@
-# Laravel Code Challenge
+# Retrieve data from Spotify API then search and display it
 
 This code test involves the creation of a working project with the help of the Laravel framework.
 The task is split into three sub-categories and shouldn't take longer than 2-4 hours of your time.
